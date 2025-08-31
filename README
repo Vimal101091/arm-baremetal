@@ -1,1 +1,10 @@
-
+Steps to run GDB with QEMU:
+(gdb) target remote localhost:1234   # Connect to QEMU
+(gdb) load                           # Load the ELF into QEMU memory
+(gdb) break Reset_Handler            # Optional: Breakpoint before your main
+(gdb) continue                       # Start execution
+step or s	                         # Step into the next instruction or function call
+next or n	                         # Step over a function call (run it without entering)
+continue or c	                     # Resume program execution until the next breakpoint
+si	                                 # Step one machine instruction (useful in assembly)
+ni	                                 # Next instruction, but doesn't step into function
